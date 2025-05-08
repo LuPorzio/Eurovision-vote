@@ -21,14 +21,14 @@ def load_data():
 
 data = load_data()['leaderboard']
 print(data)
-df = pd.DataFrame(data)
+df = pd.DataFrame(data, index=range(1, len(data['band'])+1))
 
 # Ensure proper types
 df['band'] = df['band'].astype(str)
 df['votes'] = pd.to_numeric(df['votes'], errors='coerce').astype(int)
 
 # Sort by score descending
-df = df.sort_values(by="votes", ascending=False).reset_index(drop=True)
+df = df.sort_values(by="votes", ascending=False)#.reset_index(drop=True)
 
 # # Optional: Add ranking
 # df.insert(0, 'Rank', df.index + 1)

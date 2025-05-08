@@ -7,3 +7,4 @@ jupyterlab>=3.5.0
 streamlit
 redis
 streamlit-autorefresh
+email-validator
